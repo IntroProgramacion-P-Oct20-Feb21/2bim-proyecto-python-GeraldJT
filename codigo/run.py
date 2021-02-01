@@ -117,4 +117,4 @@ if __name__ == "__main__":
         verOfal = input("Ingrese *si* si quiere seguir en el ciclo o *no* si quiere salir del ciclo:\n ")
         if (verOfal == "no") | (verOfal == "No") :
             bandera = False
-
+    obtenerMensaje(contador)
