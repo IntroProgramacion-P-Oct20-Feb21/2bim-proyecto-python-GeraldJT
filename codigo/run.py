@@ -12,7 +12,7 @@ def crearFacebook ():
     pais = input("Ingrese el país en el que vive: ")
     correo = input("Ingrese su correo electrónico: ") 
     
-    mensajeF = "El nombre del usuario es: %s, tiene una edad de: %d, vive en la ciudad de: %s,"\
+    mensajeF = "El nombre del usuario es: %s, tiene una edad de: %d años, vive en la ciudad de: %s,"\
     "en país de: %s, su correo eletrónico es: %s"%(usuario, edad, ciudad, pais, correo) 
     return mensajeF
 
@@ -26,7 +26,7 @@ def crearTwitter ():
     idioma = input("Ingrese el idioma: ")
     correo = input("Ingrese su correo electrónico: ") 
     print ("El nombre del usuario es: %s, sus nombres son: %s, sus apellidos son: %s"\
-    "tiene una edad de: %d, vive en la ciudad de: %s, en el país: %s, su idioma es: %s"\
+    "tiene una edad de: %d años, vive en la ciudad de: %s, en el país: %s, su idioma es: %s"\
     "su correo eletrónico es: %s"%(usuario, nombres, apellidos, edad, ciudad, idioma, pais, correo))
 
 def crearWhatsapp ():
@@ -35,7 +35,7 @@ def crearWhatsapp ():
     edad = int(input("Ingrese su edad: "))
     ciudad = input("Ingrese el nombre de la ciudad en la que vive: ")
     pais = input("Ingrese el país en el que vive: ")
-    mensajeF = "El nombre del usuario es: %s, su número de celular es: %d, tiene una edad de: %d, vive en la ciudad de: %s,"\
+    mensajeF = "El nombre del usuario es: %s, su número de celular es: %d, tiene una edad de: %d años, vive en la ciudad de: %s,"\
     "en país de: %s"%(usuario, numero, edad, ciudad, pais) 
     return mensajeF
 
@@ -53,7 +53,7 @@ def crearsignal ():
     numero = int(input("Ingrese su número de celular: "))
     ciudad = input("Ingrese el nombre de la ciudad en la que vive: ")
     pais = input("Ingrese el país en el que vive: ")
-    hobby = input("Ingrese su hobby favorito")
+    hobby = input("Ingrese su hobby favorito: ")
     mensajeF = "El nombre del usuario es: %s, su número de celular es: %d, vive en la ciudad de: %s,"\
     "en país de: %s, su hobby favorito es: %s"%(usuario, numero, ciudad, pais, hobby) 
     return mensajeF
@@ -93,28 +93,32 @@ if __name__ == "__main__":
         "Ingresar 3 para crear una cuenta en Whatsapp\nIngresar 4 para crear una cuenta en Telegram\n"
         "Ingresar 5 para crear una cuenta en Signal\nIngresar 6 para crear una cuenta en Instagram\n"
         "Ingresar 7 para crear una cuenta en Flickr:\n"))
-        if opcion == 1 :
-            crearFacebook()
-        else:
-            if opcion == 2 :
-                crearTwitter()
+        if opcion <= 7 :
+            if opcion == 1 :
+                print(crearFacebook())
             else:
-                if opcion == 3 :
-                    crearWhatsapp()
+                if opcion == 2 :
+                    crearTwitter()
                 else:
-                    if opcion == 4 :
-                        crearTelegram()
+                    if opcion == 3 :
+                        print(crearWhatsapp())
                     else:
-                        if opcion == 5 :
-                            crearsignal()
+                        if opcion == 4 :
+                            crearTelegram()
                         else:
-                            if opcion == 6 :
-                                crearInstagram()
+                            if opcion == 5 :
+                                print(crearsignal())
                             else:
-                                if opcion == 7 :
-                                    crearFlickr()
-        contador = contador + 1
-        verOfal = input("Ingrese *si* si quiere seguir en el ciclo o *no* si quiere salir del ciclo:\n ")
-        if (verOfal == "no") | (verOfal == "No") :
+                                if opcion == 6 :
+                                    crearInstagram()
+                                else:
+                                    if opcion == 7 :
+                                        print(crearFlickr())
+            contador = contador + 1
+        else:
+            if opcion > 7:
+                print("Opcion no válida")    
+        verOfal = int(input("Ingrese *1* si quiere seguir en el ciclo o *2* si quiere salir del ciclo:\n "))
+        if (verOfal == 2) :
             bandera = False
     obtenerMensaje(contador)
